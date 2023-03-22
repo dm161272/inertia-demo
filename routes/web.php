@@ -62,7 +62,7 @@ Route::get('/settings', function () {
 
 Route::get('/users/create', function () {
     return Inertia::render('Users/Create');
-});
+})->middleware('can:create, App\Models\User');
 
 Route::POST('/users', function () {
     $attributes = Request::validate([
