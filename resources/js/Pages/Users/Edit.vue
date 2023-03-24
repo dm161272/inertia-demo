@@ -1,8 +1,8 @@
 <template>
 
-        <Head title="Edit User" />
+<Head title="Edit User" />
 
-        <h1 class="text-3xl">Edit User: {{ username }} </h1>
+<h1 class="text-3xl">Edit User: {{ username }} </h1>
         <form @submit.prevent="submit" class="max-wd-md mx-auto mt-8">
 
 <div class="mb-6">
@@ -40,7 +40,7 @@
    class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500"
    :disabled="form.processing">
 
-   Submit
+   Submit changes
 
 </button>
 
