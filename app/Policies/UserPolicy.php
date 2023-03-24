@@ -15,7 +15,7 @@ class UserPolicy
      */
     public function create(User $user): bool
     {
-        return $user->email === 'dashawn.powlowski@example.net';
+        return $user->email;
     }
 
 }

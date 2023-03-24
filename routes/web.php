@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Request;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\LoginController;
 
 
@@ -20,18 +21,22 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-Route::get('login', [ LoginController::class, 'create'])->name('login');
-Route::post('login', [ LoginController::class, 'store']);
-Route::post('logout', [ LoginController::class, 'destroy'])->middleware('auth');
+Route::GET('login', [ LoginController::class, 'create'])->name('login');
+Route::POST('login', [ LoginController::class, 'store']);
+Route::POST('logout', [ LoginController::class, 'destroy'])->middleware('auth');
 
 
-Route::middleware('auth') -> group( function () {
+Route::middleware('auth')->group( function () {
 
-Route::get('/', function () {
+Route::GET('/', function () {
     return Inertia::render('Home');
 });
 
-Route::get('/users', function () {
+Route::GET('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+Route::PUT('/users/{user}', [UserController::class, 'update'])->name('users.update');
+
+
+Route::GET('/users', function () {
 
     return Inertia::render('Users/Index', [
         'users' => User::query()
@@ -54,15 +59,15 @@ Route::get('/users', function () {
 
         ]
     ]);
-});
+})->name('users.index');
 
-Route::get('/settings', function () {
+Route::GET('/settings', function () {
     return Inertia::render('Settings');
 });
 
-Route::get('/users/create', function () {
+Route::GET('/users/create', function () {
     return Inertia::render('Users/Create');
-})->middleware('can:create, App\Models\User');
+});
 
 Route::POST('/users', function () {
     $attributes = Request::validate([

@@ -9,7 +9,6 @@
 
 <form @submit.prevent="submit">
 
-   
 
     <div class="mb-6">
         <label class="block mb-2 uppercase font-bold
@@ -64,11 +63,8 @@
 
     </main>
 
-    
-
   </template>
   
-
 
   <script setup>
 
