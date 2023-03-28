@@ -2,9 +2,9 @@
 
 
     <section class="p-4">
-        <div class="bg-white max-w-3xl m-auto">
-        <header class="flex justify-between">
-        <h1 class="font-bold text-">
+        <div class="max-w-3xl m-auto" >
+<header class="flex justify-between">
+        <h1 class="font-bold">
             
             My Inertia App
 
@@ -18,15 +18,21 @@
    
 
     <Nav />
+    
 
- </header>
+</header>
 
         </div>
 
 
 </section> 
 
+
+
 <section class="p-4">
+    <div class="max-w-3xl mx-auto text-center mb-4">
+        <DarkMode />
+    </div>
     <div class="max-w-3xl mx-auto">
 
         <slot />
@@ -38,13 +44,16 @@
 
 </template>
 
+
+
 <script>
 
 import Nav from "./Nav.vue";
+import DarkMode from "./DarkMode.vue";
 
 export default {
 
-components: { Nav } ,
+components: { Nav, DarkMode } ,
 
 computed: {
 

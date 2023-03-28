@@ -1,13 +1,13 @@
 <template>
 
 
-<div class="flex justify-between overflow-hidden rounded-lg border border-gray-200">
+<div class="flex justify-between overflow-hidden rounded-lg border border-gray-200 " >
 
 <div class="flex items-center">
 
   <h1 class="text-2xl mx-6 my-4">Users</h1>
 
-<Link v-if="can.createUser" href="/users/create" class="text-blue-500 my-4 ml-2">New User
+<Link v-if="can.createUser" href="/users/create" class="my-4 ml-2">New User
 </Link>
 
 </div>
@@ -20,7 +20,7 @@
 
    <!-- component -->
 <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">
-  <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
+  <table class="w-full border-collapse text-left text-sm text-gray-500">
    
     <tbody class="divide-y divide-gray-100 border-t border-gray-100">
       <tr class="hover:bg-gray-50" v-for="user in users.data" :key="user.id">

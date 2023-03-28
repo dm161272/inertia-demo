@@ -54,8 +54,6 @@
 
 import { Head } from "@inertiajs/vue3";
 import { useForm } from "@inertiajs/vue3";
-import { reactive, ref, computed, defineProps } from 'vue'
-import { router } from '@inertiajs/vue3'
 
 const props = defineProps({ user: Object });
 const username = props.user.name

@@ -2,8 +2,9 @@
 
 <Link 
 
-            class="text-black hover:font-bold"
-            :class="{ 'font-bold underline': active }">
+            class="hover:font-bold"
+            :class="{ 'font-bold underline': active}"
+            >
 
            <slot />
 
@@ -14,6 +15,7 @@
 <script>
 
 import { Link } from '@inertiajs/vue3';
+
 
 export default {
 

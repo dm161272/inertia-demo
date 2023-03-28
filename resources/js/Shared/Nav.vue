@@ -1,7 +1,7 @@
 <template>
 
     <nav>
-    <ul class="flex space-x-4">
+    <ul class="flex space-x-4" >
 
         <li>
             <NavLink href="/" :active = "$page.component === 'Home'" as='button' type='button'>
